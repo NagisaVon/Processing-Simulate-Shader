@@ -1,3 +1,6 @@
+float plt(float x, float y, float pct) {
+    
+}
 
 float smoothstep(float start, float stop, float val) {
     if (val < start) return 0.0f;
@@ -15,6 +18,9 @@ color sim_fragshader(float coord_x, float coord_y) {
 void setup() { 
     size(400, 400);
     colorMode(RGB, 1);
+} 
+
+void draw() { 
     background(0);
     loadPixels();
     for (float i = 0; i < width; i++) {
@@ -23,8 +29,4 @@ void setup() {
         }
     }
     updatePixels();
-} 
-
-void draw() { 
-    
 } 

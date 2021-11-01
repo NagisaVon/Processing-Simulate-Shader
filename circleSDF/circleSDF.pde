@@ -1,15 +1,14 @@
+float circleSDF(float x, float y) {
+    return step(dist(x, y, 0.5, 0.5), 0.3);  //dist(center.xy, radius.xy)
+}
 
-float smoothstep(float start, float stop, float val) {
-    if (val < start) return 0.0f;
-    if (val >= stop) return 1.0f;
-    return lerp(0, 1, (val-start)/(stop-start));
+float step(float val, float threshold) {
+    return(val>threshold ? 1.: 0.);
 }
 
 color sim_fragshader(float coord_x, float coord_y) {
-    // float y = shader_smoothstep(0.2,0.5,coord_x) - shader_smoothstep(0.5,0.8,coord_x);
-    float y = smoothstep(0.2,0.5,coord_x);
-    color fragColor = color(y); 
-    return fragColor; 
+    color fragColor = color(circleSDF(coord_x, coord_y)); // glfragColor
+    return fragColor;
 }
 
 void setup() { 
