@@ -8,7 +8,7 @@ float smoothstep(float start, float stop, float val) {
     // lerp is a linear interpolation, but it's not smooth
     // this smooth transition is achieved by combining two parabola functions:
     // a = x^2, b = 1-(x-1)^2
-    // lerp between a and b: a(1-x)+bx  (why this is the lerp formula?)
+    // lerp between a and b: a(1-x)+bx  (imagine at the start x for a(actually 1-x) is 1, and x for b is 0, then lerp between 1 and 0) 
     // = x^2(-2x+3), and we only want the range(0, 1), so we clamp it to 0 and 1
     // using the processing constrain(amt, low, high) function
 
