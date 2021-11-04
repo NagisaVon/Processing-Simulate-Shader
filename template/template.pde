@@ -2,9 +2,9 @@
 PVector iResolution;
 
 color sim_fragshader(PVector FragCoord, float t) {
-    PVector uv = new PVector(FragCoord.x / iResolution.x, FragCoord.y / iResolution.y);
+    PVector st = new PVector(FragCoord.x / iResolution.x, FragCoord.y / iResolution.y);
     
-    return color(abs(sin(t)), uv.x, uv.y, 1.0);  
+    return color(abs(sin(t)), st.x, st.y, 1.0);  
 }
 
 float smoothstep(float start, float stop, float val) {

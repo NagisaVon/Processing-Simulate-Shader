@@ -7,7 +7,7 @@ void setup() {
   noStroke();
 
   // Load and compile shader
-  shader = loadShader("shader.frag");
+  shader = loadShader("colorMix.frag");
 }
 
 void draw() {
@@ -21,9 +21,11 @@ void draw() {
 
   // Draw a billboard
   rect(0,0,width,height);
+
 }
+
 
 void keyPressed(){
   // Reload shader everytime a key is press
   shader = loadShader("shader.frag");
-}
+} 
