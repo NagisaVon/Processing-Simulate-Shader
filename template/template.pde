@@ -22,7 +22,6 @@ void setup() {
     size(400, 400);
     colorMode(RGB, 1);
     iResolution = new PVector(width, height);
-    
 } 
 
 void draw() { 
