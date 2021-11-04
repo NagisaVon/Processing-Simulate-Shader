@@ -26,8 +26,8 @@ void setup() {
 
 void draw() { 
     loadPixels();
-    for (float i = 0; i < width; ++i) {
-        for (float j = height - 1; j >= 0; --j) {
+    for (float j = height - 1; j >= 0; --j) {
+        for (float i = 0; i < width; ++i) {
             pixels[int(j*width + i)] = sim_fragshader(new PVector(i, height-1-j), millis()/1000.);
         }
     }
