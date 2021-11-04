@@ -22,16 +22,16 @@ void setup() {
     size(400, 400);
     colorMode(RGB, 1);
     iResolution = new PVector(width, height);
+    
 } 
 
 void draw() { 
-    background(0);
     loadPixels();
-    
     for (float i = 0; i < width; ++i) {
         for (float j = height - 1; j >= 0; --j) {
             pixels[int(j*width + i)] = sim_fragshader(new PVector(i, height-1-j), millis()/1000.);
         }
     }
     updatePixels();
+    text(str(frameRate), 20, 20);
 } 
