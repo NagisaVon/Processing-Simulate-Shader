@@ -43,10 +43,10 @@ color sim_fragshader(float x, float y, float t) {
             cg = .01 / mag(u%1.0-.5, v%1.0-.5);
         }
         if (i == 2) {
-            cb = .01 / mag((u%1.0)-.5, (v%1.0)-.5);
+            cb = .01 / mag(u%1.0-.5, v%1.0-.5);
         }
         // DEBUG
-        if (x == 0.51 && y == 0.3) {
+        if (x == 0.31 && y == 0.3) {
             //println("kx: ", kx," ky: ", ky, " cr: ", cr, " cg: ", cg, " cb: ", cb, " l: ", l, " z: ", z,  " u: ", u, " v: ", v);
         }
     }
