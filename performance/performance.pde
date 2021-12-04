@@ -53,24 +53,24 @@ void draw() {
 
     // Shader Implementation
     // around 150ms
-    loadPixels();
-    for (float j = height - 1; j >= 0; --j) {
-        for (float i = 0; i < width; ++i) {
-            pixels[int(j*width + i)] = sim_fragshader(new PVector(i, height-1-j), millis()/1000.);
-        }
-    }
-    updatePixels();
-    text(str(millis()-lasttime), 20, 20);
-    lasttime = millis();
+    // loadPixels();
+    // for (float j = height - 1; j >= 0; --j) {
+    //     for (float i = 0; i < width; ++i) {
+    //         pixels[int(j*width + i)] = sim_fragshader(new PVector(i, height-1-j), millis()/1000.);
+    //     }
+    // }
+    // updatePixels();
+    // text(str(millis()-lasttime), 20, 20);
+    // lasttime = millis();
 
     // Non-Shader Implementation
     // around 12ms
-    // background(0);
-    // noStroke();
-    // fill(1);
-    // for (float i = 0; i < 100; ++i) {
-    //     circle(i*6, i*4, 2);
-    // }
-    // text(str(millis()-lasttime), 20, 20);
-    // lasttime = millis();
+    background(0);
+    noStroke();
+    fill(1);
+    for (float i = 0; i < 100; ++i) {
+        circle(i*6, i*4, 2);
+    }
+    text(str(millis()-lasttime), 20, 20);
+    lasttime = millis();
 } 
